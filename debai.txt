@@ -1,0 +1,7 @@
+Mục lục của một cuốn sách được lưu trữ dưới dạng một cây
+trong đó mỗi node có thể là chapter, section, subsection, subsubsection.  
+Khai báo cấu trúc cây để biểu diễn cuốn sách.
+1. Các thông tin chứa ở mỗi node sinh viên tự đưa vào để đảm bảo các nội dung sau được thực hiện:  
+2. Xác định số chương của cuốn sách 
+3. Tìm chương dài nhất của cuốn sách 
+4. Thực hiện tìm một mục và xoá mục đó khỏi sách. Lưu ý cập nhật lại số trang của từng mục.
