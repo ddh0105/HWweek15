@@ -37,14 +37,14 @@ void updatePages(int nodeIndex) {
     }
 }
 
-// Ham them mot node (chương, mục, tiểu mục) vào cây
+// Ham them mot node 
 bool addNode(string title, int pages, int parentIndex) {
-    if (nodeCount >= MAX_NODES) return false; // Không thể thêm nếu hết không gian
+    if (nodeCount >= MAX_NODES) return false; 
 
     book[nodeCount] = {title, pages, parentIndex};
     nodeCount++;
 
-    // Cập nhật lại số trang cho node cha sau khi thêm node mới
+    // cap nhat lai so trang
     if (parentIndex != -1) {
         updatePages(parentIndex);
     }
@@ -52,18 +52,18 @@ bool addNode(string title, int pages, int parentIndex) {
     return true;
 }
 
-// Ham đếm số chương của cuốn sách (các node con trực tiếp của root)
+// Ham dem so chuong
 int countChapters() {
     int count = 0;
     for (int i = 0; i < nodeCount; i++) {
-        if (book[i].parent == 0) { // Root là node có chỉ số 0
+        if (book[i].parent == 0) { 
             count++;
         }
     }
     return count;
 }
 
-// Ham tìm chương có số trang nhiều nhất
+// Ham tim chuong dai nhat
 int findLongestChapter() {
     int longestIndex = -1;
     int maxPages = 0;
@@ -82,7 +82,7 @@ bool deleteNode(int indexToDelete) {
 
     int parentIndex = book[indexToDelete].parent;
 
-    // Xoa các node con của node này
+    // Xoa cac node con cua cay
     for (int i = 0; i < nodeCount; i++) {
         if (book[i].parent == indexToDelete) {
             deleteNode(i);
